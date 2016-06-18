@@ -22,7 +22,7 @@ else
 			next
 		end
 
-		uri = URI("http://music.163.com/api/song/media?id=#{id}")
+		uri = URI "http://music.163.com/api/song/media?id=#{id}" 
 		json_data = Net::HTTP.get uri
 		json = JSON.parse json_data
 
