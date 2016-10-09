@@ -11,12 +11,13 @@ class String
 end
 
 if ARGV.count == 0
-	puts "Usage: #{__FILE__} [SongID]"
+	puts "Usage: #{__FILE__} [SongID/SongURL]"
 	puts ""
-	puts "Multiple SongIDs can be applyed simotaniously as parameters."
+	puts "Multiple SongIDs can be applied simotaniously as parameters."
 	puts "Lyrics will be saved to [SongID].lrc"
 else
 	ARGV.each do |id|
+		id = id.sub /http:\/\/music\.163\.com\/song\?id=/, ''
 		if !id.is_i?
 			puts "#{id}: not an valid ID"
 			next
@@ -34,4 +35,3 @@ else
 
 	end
 end
-	
